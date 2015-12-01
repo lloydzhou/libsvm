@@ -23,3 +23,6 @@ svm.o: svm.cpp svm.h
 	$(CXX) $(CFLAGS) -c svm.cpp
 clean:
 	rm -f *~ svm.o svm-train svm-predict svm-scale libsvm.so.$(SHVER)
+install: lib
+	cp libsvm.so.$(SHVER) /usr/lib/libsvm.so.$(SHVER)
+	ln -s /usr/lib/libsvm.so.$(SHVER) /usr/lib/libsvm.so
